@@ -19,7 +19,7 @@ public class NeuralNetwork {
    public static final int NUM_FEATS = 9;
 
    /** multiple of inputs to use for number of hidden nodes */
-   public static final double HIDDEN_PCT = 30;
+   public static final double HIDDEN_PCT = 10;
 
    /** number of output nodes */
    public static final int NUM_OUTPUTS = 1;

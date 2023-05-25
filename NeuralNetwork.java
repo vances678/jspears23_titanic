@@ -36,14 +36,19 @@ public class NeuralNetwork {
    /** feature set of maxium age, num parents/children, and num siblings/spouses */
    private FeatureSet myMaxes = new FeatureSet();
 
+   /** input values */
    private double[] inputs;
 
+   /** weights between input and hidden layer */
    private double[][] weights_input;
 
+   /** hidden layer values */
    private double[] hidden;
 
+   /** weights between hidden and output layer */
    private double[][] weights_hidden;
 
+   /** output values */
    private double[] outputs;
 
    /**
@@ -265,7 +270,11 @@ public class NeuralNetwork {
       }
    }
 
-   /** calculates the mean age of passengers */
+   /**
+    * calculates the mean age of passengers
+    * 
+    * @return mean age of passengers
+    */
    public double get_mean_age() {
       double ageSum = 0;
       double ageCount = 0;
@@ -499,12 +508,6 @@ public class NeuralNetwork {
     * stores info for each row in data file
     */
    private class Passenger {
-      /** passenger died */
-      public static final int DEAD = 0;
-
-      /** passenger survived */
-      public static final int ALIVE = 1;
-
       /** passenger is male */
       public static final int MALE = 0;
 
@@ -582,6 +585,9 @@ public class NeuralNetwork {
       }
    }
 
+   /**
+    * represents a set of input features
+    */
    private class FeatureSet {
 
       /** array of feature labels */
@@ -592,10 +598,18 @@ public class NeuralNetwork {
       /** array of features */
       public double[] features;
 
+      /**
+       * default constructor
+       */
       public FeatureSet() {
          features = new double[NUM_FEATS];
       }
 
+      /**
+       * constructor for given features
+       * 
+       * @param inputFeatures
+       */
       public FeatureSet(double[] inputFeatures) {
          if (inputFeatures.length == NUM_FEATS) {
             features = inputFeatures.clone();
@@ -608,6 +622,11 @@ public class NeuralNetwork {
          }
       }
 
+      /**
+       * converts feature set data to a string
+       * 
+       * @return string containing all features
+       */
       public String toString() {
          String out = "";
          for (int i = 0; i < NUM_FEATS; i++) {
